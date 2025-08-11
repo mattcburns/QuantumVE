@@ -1,5 +1,5 @@
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://github.com/sebasmos/QuantumVE/) 
+[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://github.com/sebasmos/QuantumVE/)
 [![arXiv](https://img.shields.io/badge/arXiv-2508.00024-b31b1b.svg)](https://arxiv.org/abs/2508.00024)
 
 # QuantumVE: Quantum-Transformer Advantage Boost Over Classical ML
@@ -13,7 +13,7 @@
 ## 🎯 Breakthrough Results
 
 - **8.02%** accuracy improvement on Fashion-MNIST vs classical SVMs
-- **4.42%** boost on MNIST dataset  
+- **4.42%** boost on MNIST dataset
 - **First evidence** that ViT embeddings enable quantum advantage while CNN features show degradation
 - **16-qubit** tensor network simulation via cuTensorNet proving scalability
 - **Class-balanced k-means distillation** for efficient quantum processing
@@ -38,6 +38,9 @@ QuantumVE/
 # Create conda environment
 conda create -n QuantumVE python=3.11 -y
 conda activate QuantumVE
+
+# Install MPI
+conda install -c conda-forge mpi4py openmpi
 
 # Clone and install
 git clone https://github.com/sebasmos/QuantumVE.git
@@ -71,10 +74,10 @@ rm fashionmnist_embeddings.zip
 **Single Node:**
 ```bash
 # Classical baseline with cross-validation
-python scripts/classical_baseline.py
+cd scripts && python classical_baseline.py
 
-# Cross-validation framework  
-python scripts/cross_validation_baseline.py
+# Cross-validation framework
+cd scripts && python cross_validation_baseline.py
 
 # Our embedding-aware quantum method
 python scripts/qsvm_cuda_embeddings.py
